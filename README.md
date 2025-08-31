@@ -376,44 +376,6 @@ sequenceDiagram
     ATM->>User: 24. Display Receipt & New Balance
 ```
 
-### **Multi-Threading Architecture**
-
-```mermaid
-graph TB
-    subgraph "Bank Server Process"
-        Main[🏁 Main Thread<br/>Server Initialization]
-        Listener[👂 Listener Thread<br/>Accept Connections]
-
-        subgraph "Client Handler Threads"
-            Thread1[🧵 Client Thread 1<br/>ATM-4915]
-            Thread2[🧵 Client Thread 2<br/>ATM-7823]
-            ThreadN[🧵 Client Thread N<br/>ATM-XXXX]
-        end
-
-        subgraph "Shared Resources"
-            Sessions[🎫 Session Manager<br/>Thread-Safe]
-            Database[💾 Database Handler<br/>Connection Pool]
-            Logger[📝 System Logger<br/>Thread-Safe]
-        end
-    end
-
-    Main --> Listener
-    Listener --> Thread1
-    Listener --> Thread2
-    Listener --> ThreadN
-
-    Thread1 --> Sessions
-    Thread2 --> Sessions
-    ThreadN --> Sessions
-
-    Thread1 --> Database
-    Thread2 --> Database
-    ThreadN --> Database
-
-    Thread1 --> Logger
-    Thread2 --> Logger
-    ThreadN --> Logger
-```
 
 ### **Security & Encryption Flow**
 
@@ -452,156 +414,14 @@ flowchart LR
     SendResp --> TCP
 ```
 
-## 🚀 Complete GitHub Setup Guide
 
-### **🔧 Automated GitHub Setup**
+##  Authors
 
-I've created automated scripts to help you push this project to GitHub professionally:
-
-#### **Step 1: Prepare Repository**
-```bash
-# The repository is already initialized and committed
-git status
-# Should show: "On branch main, nothing to commit, working tree clean"
-```
-
-#### **Step 2: Create GitHub Repository**
-1. **Go to GitHub**: https://github.com/new
-2. **Repository Settings:**
-   - **Name**: `ATM-Banking-System` or `Banking_Management`
-   - **Description**: `Production-grade distributed ATM banking system with advanced C++ concepts`
-   - **Visibility**: **Public** (to showcase your skills)
-   - **Initialize**: ❌ **Don't** check "Add a README file" (we have one)
-   - **License**: Choose MIT License
-   - **Gitignore**: ❌ **Don't** add (we have a custom one)
-
-#### **Step 3: Push to GitHub**
-```bash
-# Run the automated push script
-./push_to_github.sh
-
-# When prompted, enter your GitHub repository URL:
-# Example: https://github.com/abhimanyuyadav/Banking_Management.git
-```
-
-#### **Step 4: Verify Upload**
-Your GitHub repository will contain:
-- ✅ **54 source files** (10,612+ lines of code)
-- ✅ **Professional README.md** with demos and documentation
-- ✅ **Complete technical report** (1,400+ lines)
-- ✅ **Database schema** and design documentation
-- ✅ **Build system** (Makefiles, CMake)
-- ✅ **Proper .gitignore** excluding build artifacts
-
-### **📋 Manual GitHub Setup (Alternative)**
-
-If you prefer manual setup:
-
-```bash
-# 1. Add remote repository
-git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
-
-# 2. Set main branch
-git branch -M main
-
-# 3. Push to GitHub
-git push -u origin main
-
-# 4. Verify push success
-git remote -v
-git log --oneline -5
-```
-
-### **🎯 Repository Enhancement Commands**
-
-```bash
-# Add repository topics/tags on GitHub for better discoverability
-# Go to your repository → Settings → Topics
-# Add: cpp, banking-system, distributed-systems, sqlite, networking,
-#      multithreading, security, system-design, interview-prep
-
-# Create releases for major versions
-git tag -a v1.0.0 -m "Production-ready ATM banking system"
-git push origin v1.0.0
-```
-
-### **📊 Repository Statistics**
-
-After pushing, your repository will show:
-- **Languages**: C++ (85%), Makefile (8%), Shell (4%), HTML (3%)
-- **Files**: 54 files across multiple directories
-- **Documentation**: Comprehensive README, technical reports, guides
-- **Build System**: Professional Makefiles and CMake configuration
-- **Testing**: Test scripts and validation tools
-
-## 🔧 Technical Features & Implementation
-
-### **🏦 Core Banking System**
-- ✅ **User Management**: Registration, authentication, profile management
-- ✅ **Account Operations**: Multiple account types (Savings, Checking)
-- ✅ **Transaction Processing**: Deposits, withdrawals, transfers, balance inquiries
-- ✅ **Transaction History**: Complete audit trail with timestamps
-- ✅ **Multi-user Support**: Concurrent user sessions with thread safety
-
-### **🌐 Network & Security**
-- ✅ **TCP/IP Sockets**: Reliable client-server communication
-- ✅ **Custom Protocol**: JSON-based messaging with encryption
-- ✅ **Session Management**: Token-based authentication with expiration
-- ✅ **Encryption**: XOR cipher with Base64 encoding for network security
-- ✅ **Security**: Password hashing, input validation, SQL injection prevention
-
-### **💾 Database Management**
-- ✅ **SQLite Integration**: Embedded database with full SQL support
-- ✅ **ACID Transactions**: Atomic, consistent, isolated, durable operations
-- ✅ **Prepared Statements**: Performance optimization and security
-- ✅ **Database Schema**: Normalized design with proper relationships
-- ✅ **Concurrent Access**: Thread-safe database operations
-
-### **⚡ Advanced Programming**
-- ✅ **Object-Oriented Design**: Inheritance, polymorphism, encapsulation
-- ✅ **Design Patterns**: Singleton, Factory, Observer, Strategy
-- ✅ **Memory Management**: Smart pointers, RAII, exception safety
-- ✅ **Concurrency**: Multi-threading, mutex synchronization, deadlock prevention
-- ✅ **Template Programming**: Generic containers and type safety
-
-## 📊 Performance Metrics
-
-| Metric | Performance | Implementation |
-|--------|-------------|----------------|
-| **Connection Time** | <100ms | Optimized TCP socket setup |
-| **Authentication** | <200ms | Hash table lookup + verification |
-| **Balance Query** | <50ms | Indexed database access |
-| **Transaction Processing** | <300ms | ACID transaction with logging |
-| **Concurrent ATMs** | 10+ clients | Multi-threaded server |
-| **Memory Usage** | <50MB | Smart pointers + RAII |
-| **Network Throughput** | 1000+ msg/sec | Efficient JSON protocol |
-| **Database Operations** | 100+ TPS | Prepared statements + indexing |
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 👨‍💻 Author
+**Dipesh Patidar**
+- 📧 Email: dipesh.patidar@iitgn.ac.in
 
 **Abhimanyu Yadav**
-- 📧 Email: abhimanyu.yadav@example.com
-- 💼 LinkedIn: [linkedin.com/in/abhimanyuyadav](https://linkedin.com/in/abhimanyuyadav)
-- 🐙 GitHub: [github.com/abhimanyuyadav](https://github.com/abhimanyuyadav)
-
-## 🙏 Acknowledgments
-
-- **SQLite** for the embedded database engine
-- **C++ Standard Library** for threading and networking support
-- **POSIX** for socket programming standards
-- **Modern C++** community for best practices and patterns
+- 📧 Email: abhimanyu.abhimanyu@iitgn.ac.in
 
 ---
 
