@@ -327,11 +327,7 @@ cd ATM_Machine
 
 
 ## 📚 Documentation
-
-- **[Technical Report](TECHNICAL_REPORT.md)** - Comprehensive technical analysis
 - **[System Guide](DISTRIBUTED_SYSTEM_GUIDE.md)** - Setup and usage instructions
-- **[API Documentation](docs/)** - Code documentation and API reference
-
 
 ## 🔄 System Working & Data Flow
 
