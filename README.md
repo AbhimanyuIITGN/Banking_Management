@@ -8,10 +8,7 @@
 [![Build](https://img.shields.io/badge/Build-Passing-brightgreen.svg)](https://github.com)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-A **production-grade distributed ATM banking system** built with advanced C++ concepts, demonstrating enterprise-level software engineering practices. This project simulates real-world banking infrastructure with separate ATM machines communicating with a central bank server over encrypted network protocols.
-
-> **🎯 Built for placement interviews and technical demonstrations**
-> Showcases expertise in distributed systems, advanced C++, database management, network programming, and security implementation.
+A **Distributed ATM banking system** built with advanced C++ concepts, demonstrating enterprise-level software engineering practices. This project simulates real-world banking infrastructure with separate ATM machines communicating with a central bank server over encrypted network protocols.
 
 ## 🎯 Project Overview
 
