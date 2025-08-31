@@ -199,70 +199,6 @@ erDiagram
     USERS ||--o{ AUDITLOG : "generates"
 ```
 
-### **Database Table Specifications**
-
-#### **👤 USERS Table**
-| Column | Type | Constraints | Purpose |
-|--------|------|-------------|---------|
-| `user_id` | INTEGER | PRIMARY KEY, AUTOINCREMENT | Unique user identifier |
-| `name` | TEXT | NOT NULL | Customer full name |
-| `email` | TEXT | UNIQUE, NOT NULL | Login identifier |
-| `password_hash` | TEXT | NOT NULL | Secure password storage |
-| `salt` | TEXT | - | Password hashing salt |
-| `created_at` | DATETIME | DEFAULT CURRENT_TIMESTAMP | Account creation |
-| `is_active` | INTEGER | DEFAULT 1 | Account status |
-| `failed_login_attempts` | INTEGER | DEFAULT 0 | Security tracking |
-
-#### **💳 ACCOUNTS Table**
-| Column | Type | Constraints | Purpose |
-|--------|------|-------------|---------|
-| `account_id` | INTEGER | PRIMARY KEY, AUTOINCREMENT | Unique account identifier |
-| `user_id` | INTEGER | FOREIGN KEY, NOT NULL | Account owner |
-| `balance` | REAL | NOT NULL, CHECK >= 0 | Current balance |
-| `account_type` | TEXT | CHECK IN ('SAVINGS', 'CURRENT') | Account classification |
-| `interest_rate` | REAL | DEFAULT 0.0350 | Annual interest rate |
-| `minimum_balance` | REAL | DEFAULT 0.00 | Minimum required balance |
-
-#### **💸 TRANSACTIONS Table**
-| Column | Type | Constraints | Purpose |
-|--------|------|-------------|---------|
-| `transaction_id` | INTEGER | PRIMARY KEY, AUTOINCREMENT | Unique transaction ID |
-| `from_account_id` | INTEGER | FOREIGN KEY, NULL | Source account |
-| `to_account_id` | INTEGER | FOREIGN KEY, NULL | Destination account |
-| `amount` | REAL | NOT NULL, CHECK > 0 | Transaction amount |
-| `transaction_type` | TEXT | CHECK IN ('DEPOSIT', 'WITHDRAWAL', 'TRANSFER') | Operation type |
-| `status` | TEXT | CHECK IN ('SUCCESS', 'FAILED', 'PENDING') | Transaction status |
-| `reference_number` | TEXT | UNIQUE | Transaction reference |
-
-### **Database Normalization (3NF Compliance)**
-
-```mermaid
-graph TD
-    subgraph "1NF - First Normal Form"
-        A1[✅ Atomic Values]
-        A2[✅ No Repeating Groups]
-        A3[✅ Unique Rows]
-    end
-
-    subgraph "2NF - Second Normal Form"
-        B1[✅ 1NF Compliance]
-        B2[✅ Full Functional Dependency]
-        B3[✅ No Partial Dependencies]
-    end
-
-    subgraph "3NF - Third Normal Form"
-        C1[✅ 2NF Compliance]
-        C2[✅ No Transitive Dependencies]
-        C3[✅ Direct Primary Key Dependencies]
-    end
-
-    A1 --> B1
-    A2 --> B1
-    A3 --> B1
-    B1 --> C1
-    B2 --> C2
-    B3 --> C3
-```
 
 ### **Transaction Flow Database Design**
 
@@ -299,7 +235,7 @@ sequenceDiagram
 
 #### **Step 1: Clone the Repository**
 ```bash
-git clone https://github.com/yourusername/Banking_Management.git
+git clone https://github.com/AbhimanyuIITGN/Banking_Management.git
 cd Banking_Management
 ```
 
