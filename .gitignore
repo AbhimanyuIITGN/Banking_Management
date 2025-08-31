@@ -1,0 +1,84 @@
+# Compiled binaries
+bin/
+build/
+*.o
+*.exe
+*.out
+*.app
+
+# Database files (exclude from repo for security)
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+
+# Sync files (runtime generated)
+*.sync
+
+# Test databases
+test.db
+test_db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+
+# Generated documentation
+docs/html/
+docs/latex/
+
+# Package manager files
+node_modules/
+*.lock
+
+# Build artifacts
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile.bak
+
+# Generated HTML/PDF reports (optional - you can include these)
+# ATM_Technical_Report.html
+# *.pdf
+
+# Backup files
+*.bak
+*.backup
+
+# Core dumps
+core.*
+
+# Profiling data
+*.prof
+gmon.out
+
+# Coverage reports
+*.gcov
+*.gcda
+*.gcno
+coverage/
+
+# Static analysis
+cppcheck-report.xml
